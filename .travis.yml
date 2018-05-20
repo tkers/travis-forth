@@ -1,4 +1,9 @@
 language: generic
-before_install: sudo apt-get update -y
+before_install:
+  - sudo apt-get update -y
+  - sudo apt-get remove emacs || true
+  - sudo apt-get remove emacs23 || true
+  - sudo apt-get remove emacs24 || true
+  - sudo apt-get remove emacs25 || true
 install: sudo apt-get install -y gforth
 script: gforth ./demo.spec.fs -e bye
